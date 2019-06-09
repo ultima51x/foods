@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
       // the following is recommended for nodejs by <https://github.com/Microsoft/TypeScript-Node-Starter/blob/master/tsconfig.json>
-      "module": "commonjs",
-      "esModuleInterop": true, // mixing of module styles?
-      "target": "es6",
+      "module": "commonjs", // this generates commonjs code
+      "esModuleInterop": true, // mixing of module styles
+      "target": "es2018", // changed this from es6 to es2018
       "noImplicitAny": true,
       "moduleResolution": "node",
       "sourceMap": true,
