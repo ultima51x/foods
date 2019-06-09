@@ -1,11 +1,15 @@
-import express from "express";
-import router from "./routes/index";
+import express from 'express';
+import morgan from 'morgan';
+import router from './routes/index';
 
 const app = express();
 const port = 3000;
 
-app.use("/", router);
+// http request logging
+app.use(morgan('combined'));
+
+app.use('/', router);
 
 app.listen(port, (): void => {
-  console.log(`Example app listening on port ${port}!`);
+  console.log(`Starting foods ${port}!`);
 });
