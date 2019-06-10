@@ -16,14 +16,27 @@ Node.js 10 supports ES2018 features, so I'm targeting 2018.
 
 ## Possible Features
 
+* process.env to have a typescript type
 * CRUD
 * Search
 * Attach Images and PDFs to Recipes
 
 ## Common Tasks
 
-Development
+### Development
 
 ```sh
 yarn run watch
 ```
+
+### Database Stuff
+
+For available commands, check out:
+
+```sh
+yarn sequelize
+```
+
+### Debugging
+
+In VSCode, attach using the command: "Debug: Attach to Node Process"

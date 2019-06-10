@@ -1,0 +1,9 @@
+// These are the settings for the sequelize-cli, used for migrations, etc.
+
+const path = require('path')
+
+module.exports = {
+  'config':          path.resolve('config', 'database.js'),
+  'migrations-path': path.resolve('db', 'migrate'),
+  'models-path':     path.resolve('src', 'models'), // models need to be converted to ts
+}
