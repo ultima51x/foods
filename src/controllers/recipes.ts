@@ -20,7 +20,6 @@ export async function index(req: Request, res: Response): Promise<void> {
 export async function create(req: Request, res: Response): Promise<void> {
   const recipe = await Recipe.create(permit(req.body));
   res.json({ recipe: recipe.toJSON() });
-  // TODO handle error
 }
 
 export async function get(

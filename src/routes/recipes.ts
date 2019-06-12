@@ -1,5 +1,6 @@
 import express from "express";
 import { index, update, del, create, get } from "../controllers/recipes";
+import wrap from "../lib/async-error-catcher";
 
 const router = express.Router();
 
@@ -15,13 +16,13 @@ router
   //   // Something for everything
   //   next();
   // })
-  .get(get)
-  .patch(update)
-  .delete(del);
+  .get(wrap(get))
+  .patch(wrap(update))
+  .delete(wrap(del));
 
 router
   .route("/")
-  .post(create)
-  .get(index);
+  .post(wrap(create))
+  .get(wrap(index));
 
 export default router;
