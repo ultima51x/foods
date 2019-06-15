@@ -47,6 +47,9 @@ IngredientRecipe.init(
   },
 );
 
+Ingredient.hasMany(IngredientRecipe);
+Recipe.hasMany(IngredientRecipe);
+
 Ingredient.belongsToMany(Recipe, {
   through: {
     model: IngredientRecipe,
