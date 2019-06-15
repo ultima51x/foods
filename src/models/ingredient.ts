@@ -1,16 +1,16 @@
 import { Model, DataTypes } from "sequelize";
 import db from "./db";
 
-class Recipe extends Model {
+class Ingredient extends Model {
   public id!: number;
   public name!: string;
-  public copy!: string;
+  public description?: string;
 
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 }
 
-Recipe.init(
+Ingredient.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -22,15 +22,14 @@ Recipe.init(
       unique: true,
       allowNull: false,
     },
-    summary: {
+    description: {
       type: DataTypes.TEXT,
-      allowNull: true,
     },
   },
   {
     sequelize: db,
-    tableName: "Recipes",
+    tableName: "Ingredients",
   },
 );
 
-export default Recipe;
+export default Ingredient;
